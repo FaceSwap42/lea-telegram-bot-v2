@@ -19,7 +19,7 @@ Envoie moi un message sur telegram 👉 @Leaa6231 pour me dire que tu t'es abonn
 
 A tout de suite 😚❤️"""
 
-PHOTO_URL = "PLACEHOLDER_PHOTO_URL"
+PHOTO_URL = "https://raw.githubusercontent.com/FaceSwap42/lea-telegram-bot-v2/main/8d982696-9a3f-43de-8daf-fde2b93c1a72.jpeg"
 
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
@@ -36,7 +36,7 @@ async def gerer_demande_adhesion(update: Update, context: ContextTypes.DEFAULT_T
     logger.info(f"Nouvelle demande d'adhesion : {user.id} ({user.first_name}) -> {chat.title}")
 
     try:
-        if PHOTO_URL and PHOTO_URL != "PLACEHOLDER_PHOTO_URL":
+        if PHOTO_URL:
             await context.bot.send_photo(
                 chat_id=user.id,
                 photo=PHOTO_URL,
